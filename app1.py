@@ -11,25 +11,9 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
 import os
-import configparser
-import logging
-from nlp.olami import Olami
-
-# Load data from config.ini file
-config = configparser.ConfigParser()
-config.read('config.ini')
-
-# Enable logging
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    level=logging.INFO)
-logger = logging.getLogger(__name__)
-
-
-# Initial Flask app
 app = Flask(__name__)
 
 # LINE 聊天機器人的基本資料
-# Initial bot by Line access token
 #line_bot_api = LineBotApi(' 你的Channel access token (long-lived) ')
 #handler = WebhookHandler(' 你的Channel secret ')
 line_bot_api = LineBotApi('LfgFsao2M8AOButxVc+AmwKXz4gl+/ug2ofbekaDcEAGTniTCsoDjEKc1HrTBndK5iT9Ttcj2Qp3BVUWBxUxYus/tJHxX7sSzU4qeQmSuJF5xinHkdU6RT8Ko5r799Kv9CKaNuYy8P00s5OoRKqFfwdB04t89/1O/w1cDnyilFU=')
@@ -62,11 +46,11 @@ def handle_message(event):
     
     if event.message.text==u"==":
         replay_message(event,TextSendMessage(u"如果輸入==不要加空格回覆此行"))
-#        push_message(event,TextSendMessage(u"謝謝光臨"))
+        push_message(event,TextSendMessage(u"謝謝光臨"))
         
     else:
-        replay_message(event,TextSendMessage(text=Olami().nli(event.message.text,event.source.user_id)))
-#        push_message(event,TextSendMessage(u"謝謝光臨"))
+        replay_message(event,message)
+        push_message(event,TextSendMessage(u"謝謝光臨"))
 
 def replay_message(event,text):
     line_bot_api.reply_message(event.reply_token,text)
