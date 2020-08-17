@@ -63,12 +63,12 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,LocationSendMessage(title='我的位置', address='台科大', latitude=25.013277, longitude=121.540617))
     elif event.message.text == "位置2":
         imagemap_message = ImagemapSendMessage(
-                        base_url='https://www.kamigo.tw/assets/kamigo-c3b10dff4cdb60fa447496b22edad6c32fffde96de20262efba690892e4461e8.png#',
+                        base_url='https://myalbum.com/photo/9DudM7hcSgBs/540.jpg#',
                         alt_text='this is an imagemap',
                         base_size=BaseSize(height=1040, width=1040),
                         actions=[
                             URIImagemapAction(
-                                link_uri='https://www.kamigo.tw/',
+                                link_uri='https://www.ntust.edu.tw/',
                                 area=ImagemapArea(
                                     x=0, y=0, width=520, height=1040
                                 )
@@ -88,7 +88,7 @@ def handle_message(event):
         template=ButtonsTemplate(
             title='Template-樣板介紹',
             text='Template分為四種，也就是以下四種：',
-            thumbnail_image_url='圖片網址',
+            thumbnail_image_url='https://myalbum.com/photo/TNB44WsxDtgL/360.jpg',
             actions=[
                 MessageTemplateAction(
                     label='Buttons Template',
