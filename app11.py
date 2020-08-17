@@ -82,7 +82,7 @@ def handle_message(event):
                         ]
                     )
         line_bot_api.reply_message(event.reply_token,imagemap_message)
-    elif event.message.text == "樣板":    
+    elif event.message.text == "開始":    
         buttons_template = TemplateSendMessage(
         alt_text='目錄 template',
         template=ButtonsTemplate(
