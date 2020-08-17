@@ -52,9 +52,11 @@ def handle_message(event):
     elif event.message.text == u"貼圖":
         line_bot_api.reply_message(event.reply_token,StickerSendMessage(package_id=1, sticker_id=3))
     elif event.message.text == u"圖片":
-        line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url='https://myalbum.com/photo/ND94LXJCrVMW/360.jpg', preview_image_url='https://myalbum.com/photo/ND94LXJCrVMW/360.jpg'))
+        line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url='https://myalbum.com/photo/ND94LXJCrVMW/360.jpg',
+        preview_image_url='https://myalbum.com/photo/ND94LXJCrVMW/360.jpg'))
     elif event.message.text == u"影片":
-        line_bot_api.reply_message(event.reply_token,VideoSendMessage(original_content_url='https://twweeb.org/example/html5-video-tag/Yif-Magic.mp4', preview_image_url='https://myalbum.com/photo/ND94LXJCrVMW/360.jpg'))
+        line_bot_api.reply_message(event.reply_token,VideoSendMessage(original_content_url='https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/imagemap/video.mp4',
+        preview_image_url='https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/imagemap/preview.jpg'))
     elif event.message.text == u"音訊":
         line_bot_api.reply_message(event.reply_token,AudioSendMessage(original_content_url='https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.mp3', duration=100000))
     else:
