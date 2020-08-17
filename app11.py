@@ -54,7 +54,7 @@ def handle_message(event):
     elif event.message.text == u"圖片":
         line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url='https://myalbum.com/photo/ND94LXJCrVMW/360.jpg', preview_image_url='https://myalbum.com/photo/ND94LXJCrVMW/360.jpg'))
     elif event.message.text == u"影片":
-        line_bot_api.reply_message(event.reply_token,VideoSendMessage(original_content_url='https://140.118.108.60/xmas.MP4', preview_image_url='https://140.118.108.60/xmas.png'))
+        line_bot_api.reply_message(event.reply_token,VideoSendMessage(original_content_url='https://twweeb.org/example/html5-video-tag/Yif-Magic.mp4', preview_image_url='https://140.118.108.60/xmas.png'))
     elif event.message.text == u"音訊":
         line_bot_api.reply_message(event.reply_token,AudioSendMessage(original_content_url='https://140.118.108.60/test.mp3', duration=100000))
     else:
