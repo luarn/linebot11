@@ -42,10 +42,19 @@ def callback():
 # 學你說話
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    
     message = TextSendMessage(text=event.message.text)
     
     if event.message.text==u"==":
         line_bot_api.reply_message(event.reply_token,TextSendMessage(u"如果輸入==不要加空格回覆此行"))
+    elif event.message.text == u"貼圖":
+        line_bot_api.reply_message(event.reply_token,StickerSendMessage(package_id=1, sticker_id=3))
+    elif event.message.text == u"圖片":
+        line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url='https://myalbum.com/photo/ND94LXJCrVMW/360.jpg', preview_image_url='https://myalbum.com/photo/ND94LXJCrVMW/360.jpg'))
+    elif event.message.text == u"影片":
+        line_bot_api.reply_message(event.reply_token,VideoSendMessage(original_content_url='https://140.118.108.60/xmas.MP4', preview_image_url='https://140.118.108.60/xmas.png'))
+    elif event.message.text == u"音訊":
+        line_bot_api.reply_message(event.reply_token,AudioSendMessage(original_content_url='https://140.118.108.60/test.mp3', duration=100000))
     else:
         line_bot_api.reply_message(event.reply_token,message)
 
