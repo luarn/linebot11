@@ -56,7 +56,7 @@ def handle_message(event):
     elif event.message.text == u"影片":
         line_bot_api.reply_message(event.reply_token,VideoSendMessage(original_content_url='https://twweeb.org/example/html5-video-tag/Yif-Magic.mp4', preview_image_url='https://140.118.108.60/xmas.png'))
     elif event.message.text == u"音訊":
-        line_bot_api.reply_message(event.reply_token,AudioSendMessage(original_content_url='https://140.118.108.60/test.mp3', duration=100000))
+        line_bot_api.reply_message(event.reply_token,AudioSendMessage(original_content_url='http://www.mqes.tp.edu.tw/la/ups034/example/lesson8/%E5%B0%8F%E5%A4%9C%E6%9B%B2.mp3', duration=100000))
     else:
         line_bot_api.reply_message(event.reply_token,message)
 
