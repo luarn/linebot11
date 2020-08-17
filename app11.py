@@ -1,4 +1,4 @@
-#app1.py
+#app11.py
 from flask import Flask, request, abort
 
 from linebot import (
@@ -45,19 +45,9 @@ def handle_message(event):
     message = TextSendMessage(text=event.message.text)
     
     if event.message.text==u"==":
-        replay_message(event,TextSendMessage(u"如果輸入==不要加空格回覆此行"))
-        push_message(event,TextSendMessage(u"謝謝光臨"))
-        
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(u"如果輸入==不要加空格回覆此行"))
     else:
-        replay_message(event,message)
-        push_message(event,TextSendMessage(u"謝謝光臨"))
-
-def replay_message(event,text):
-    line_bot_api.reply_message(event.reply_token,text)
-        
-def push_message(event,text):
-    line_bot_api.push_message(event.source.user_id,text)        
-
+        line_bot_api.reply_message(event.reply_token,message)
 
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
