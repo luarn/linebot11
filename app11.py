@@ -58,7 +58,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,VideoSendMessage(original_content_url='https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/imagemap/video.mp4',
         preview_image_url='https://github.com/line/line-bot-sdk-nodejs/raw/master/examples/kitchensink/static/imagemap/preview.jpg'))
     elif event.message.text == u"音訊":
-        line_bot_api.reply_message(event.reply_token,AudioSendMessage(original_content_url='https://140.118.108.60/mp3/1.mp3', duration=100000))
+        line_bot_api.reply_message(event.reply_token,AudioSendMessage(original_content_url='https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.mp3', duration=100000))
     elif event.message.text == "位置":
         line_bot_api.reply_message(event.reply_token,LocationSendMessage(title='我的位置', address='台科大', latitude=25.013277, longitude=121.540617))
     elif event.message.text == "位置2":
