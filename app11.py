@@ -16,10 +16,9 @@ import os
 app = Flask(__name__)
 
 # LINE 聊天機器人的基本資料
-#line_bot_api = LineBotApi(' 你的Channel access token (long-lived) ')
-#handler = WebhookHandler(' 你的Channel secret ')
-line_bot_api = LineBotApi('LfgFsao2M8AOButxVc+AmwKXz4gl+/ug2ofbekaDcEAGTniTCsoDjEKc1HrTBndK5iT9Ttcj2Qp3BVUWBxUxYus/tJHxX7sSzU4qeQmSuJF5xinHkdU6RT8Ko5r799Kv9CKaNuYy8P00s5OoRKqFfwdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('2e746db03940d5d2339a56529dc850bc')
+line_bot_api = LineBotApi(' 你的Channel access token (long-lived) ')
+handler = WebhookHandler(' 你的Channel secret ')
+
 
 
 # 接收 LINE 的資訊
